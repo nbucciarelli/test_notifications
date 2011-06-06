@@ -26,12 +26,12 @@ def return_feed
 end
 
 latest_global_status = nil
-puts latest_global_status.inspect
+
 EventMachine::run do
   EM.add_periodic_timer(3) do
     new_build = most_recent_non_aborted_status
     if latest_global_status != new_build
-      if new_build['title'].include?('back to normal') || new_build['title'].include?('broken')
+      if new_build['title'].include?('broken')
         Growl.notify_error("The build was broken #{Time.parse(new_build['published']).strftime('at %I:%M %P on %m/%d/%Y')}", :sticky => true)
       end
       latest_global_status = new_build
