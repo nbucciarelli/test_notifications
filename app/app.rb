@@ -38,6 +38,3 @@ EventMachine::run do
     end
   end
 end
-
-
-

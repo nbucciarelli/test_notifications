@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     crack (0.1.8)
+    daemons (1.1.3)
     eventmachine (0.12.10)
     growl (1.0.3)
     mime-types (1.16)
@@ -13,6 +14,7 @@ PLATFORMS
 
 DEPENDENCIES
   crack
+  daemons
   eventmachine
   growl
   rest-client

@@ -1,1 +1,1 @@
-credentials: 'http://test:test@text.com'
+credentials: "http://#{username}:#{password}@#{url}/#{project_name}/rssAll"
