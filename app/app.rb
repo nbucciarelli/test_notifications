@@ -6,10 +6,6 @@ require 'eventmachine'
 
 @credentials = YAML.load_file(File.join('config','config.yml'))
 
-# latest_global_status = Crack::XML.parse(RestClient.get(credentials['credentials']))['feed']['entry'].first
-# unless latest_global_status['title'].include? 'stable'
-#   Growl.notify_error("The build was broken #{Time.parse(latest_global_status['published']).strftime('at %I:%M %P on %m/%d/%Y')}", :sticky => true)
-# end
 def most_recent_non_aborted_status(i=0)
   feed = return_feed
   if i < feed.size - 1
