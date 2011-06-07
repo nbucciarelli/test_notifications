@@ -1,10 +1,7 @@
 require 'rest-client'
 require 'crack'
-require 'yaml'
 require 'growl'
 require 'eventmachine'
-
-@credentials = YAML.load_file(File.join('config','config.yml'))
 
 def most_recent_non_aborted_status(i=0)
   feed = return_feed
@@ -22,7 +19,9 @@ def most_recent_non_aborted_status(i=0)
 end
 
 def return_feed
-  Crack::XML.parse(RestClient.get(@credentials['credentials']))['feed']['entry']
+  Crack::XML.parse(RestClient.get(@@credentials['credentials']))['feed']['entry']
+  # Crack::XML.parse(RestClient.get("http://jackhq:Jackdog1@ci.jrs-labs.com/job/Nick's%20Test/rssAll"))['feed']['entry']
+
 end
 
 latest_global_status = nil
