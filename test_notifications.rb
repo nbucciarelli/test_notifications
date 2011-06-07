@@ -1,4 +1,4 @@
 require 'rubygems'
 require 'daemons'
 
-Daemons.run('./app/loop.rb')
+Daemons.run('./app/app.rb')
